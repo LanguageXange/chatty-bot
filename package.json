@@ -1,8 +1,7 @@
 {
   "name": "my-bot",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "a discord bot",
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
