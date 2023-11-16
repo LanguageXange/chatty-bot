@@ -7,7 +7,9 @@ const data = new SlashCommandBuilder()
 
 async function execute(interaction) {
   await interaction.reply(
-    `Pong! This command was run by ${interaction.user.globalName}`
+    `Pong! This command was run by ${
+      interaction.member?.nickname || interaction.user.globalName
+    }`
   );
 }
 

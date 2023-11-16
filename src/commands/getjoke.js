@@ -29,17 +29,6 @@ async function execute(interaction) {
   } catch (err) {
     await interaction.editReply(err);
   }
-
-  //   await interaction.reply(
-  //     `
-  //     --------
-  //     Here is a ${type} joke:
-  //     ${setup}
-
-  //     --------
-  //     ${punchline}
-  //     `
-  //   );
 }
 
 module.exports = { data, execute };
