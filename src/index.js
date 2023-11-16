@@ -7,6 +7,9 @@ const { token } = require("./config.js");
 // Bits are like permission flags
 // Intents are named groups of pre-defined WebSocket events
 
+// see  https://github.com/cyclic-software/starter-discord-bot#set-up-interactions-endpoint
+// if we want to deploy using Cyclic, we need to use `discord-interactions` library instead
+
 const pingCommand = require("./commands/ping");
 const jokeCommand = require("./commands/getjoke.js");
 const activityCommand = require("./commands/getActivity.js");
