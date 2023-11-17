@@ -1,5 +1,5 @@
 // https://discordjs.guide/creating-your-bot/command-handling.html#receiving-command-interactions
-async function interactionHandler(interaction) {
+export async function interactionHandler(interaction) {
   if (!interaction.isChatInputCommand()) return;
 
   const command = interaction.client.commands.get(interaction.commandName);
@@ -22,5 +22,3 @@ async function interactionHandler(interaction) {
     }
   }
 }
-
-module.exports = { interactionHandler };

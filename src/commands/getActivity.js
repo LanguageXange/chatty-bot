@@ -1,5 +1,5 @@
-const { SlashCommandBuilder } = require("discord.js");
-const { fetchActivity } = require("../requests/activity");
+import { SlashCommandBuilder } from "discord.js";
+import { fetchActivity } from "../requests/activity.js";
 
 const data = new SlashCommandBuilder()
   .setName("activity")
@@ -28,4 +28,4 @@ async function execute(interaction) {
   await interaction.reply(`Activity Idea: ${activity}`);
 }
 
-module.exports = { data, execute };
+export default { data, execute };

@@ -1,5 +1,5 @@
-const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
-const { fetchJokes } = require("../requests/joke");
+import { SlashCommandBuilder, EmbedBuilder } from "discord.js";
+import { fetchJokes } from "../requests/joke.js";
 
 const data = new SlashCommandBuilder()
   .setName("joke")
@@ -31,4 +31,4 @@ async function execute(interaction) {
   }
 }
 
-module.exports = { data, execute };
+export default { data, execute };

@@ -1,6 +1,6 @@
-const axios = require("axios");
+import axios from "axios";
 const URL = "https://official-joke-api.appspot.com/random_joke";
-async function fetchJokes() {
+export async function fetchJokes() {
   try {
     const res = await axios.get(URL);
     return res.data;
@@ -9,5 +9,3 @@ async function fetchJokes() {
     throw new Error("error fetching random joke!");
   }
 }
-
-module.exports = { fetchJokes };

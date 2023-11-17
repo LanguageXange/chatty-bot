@@ -1,4 +1,4 @@
-const { SlashCommandBuilder } = require("discord.js");
+import { SlashCommandBuilder } from "discord.js";
 
 // https://discordjs.guide/creating-your-bot/slash-commands.html#individual-command-files
 const data = new SlashCommandBuilder()
@@ -13,4 +13,4 @@ async function execute(interaction) {
   );
 }
 
-module.exports = { data, execute };
+export default { data, execute };

@@ -1,6 +1,6 @@
-const axios = require("axios");
+import axios from "axios";
 const URL = "http://www.boredapi.com/api/activity";
-async function fetchActivity(activityType) {
+export async function fetchActivity(activityType) {
   try {
     const res = await axios.get(`${URL}?type=${activityType}`);
     return res.data;
@@ -9,5 +9,3 @@ async function fetchActivity(activityType) {
     throw new Error("error fetching activities !");
   }
 }
-
-module.exports = { fetchActivity };

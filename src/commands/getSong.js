@@ -1,5 +1,5 @@
-const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
-const { fetchSongs } = require("../requests/song");
+import { SlashCommandBuilder, EmbedBuilder } from "discord.js";
+import { fetchSongs } from "../requests/song.js";
 
 const data = new SlashCommandBuilder()
   .setName("songs")
@@ -58,4 +58,4 @@ async function execute(interaction) {
   }
 }
 
-module.exports = { data, execute };
+export default { data, execute };

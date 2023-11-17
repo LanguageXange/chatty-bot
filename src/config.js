@@ -1,4 +1,4 @@
-require("dotenv").config();
+import "dotenv/config";
 const setting = {
   token: process.env.BOT_TOKEN,
   clientId: process.env.APP_ID,
@@ -6,4 +6,4 @@ const setting = {
   rapidApiKey: process.env.API_KEY,
 };
 
-module.exports = setting;
+export default setting;

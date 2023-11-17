@@ -1,9 +1,11 @@
-const { REST, Routes } = require("discord.js");
+import { REST, Routes } from "discord.js";
 // https://discordjs.guide/creating-your-bot/command-deployment.html#guild-commands
 
-const { token, clientId, guildId } = require("../config.js");
+import setting from "../config.js";
+
+const { token, clientId, guildId } = setting;
 const rest = new REST({ version: "10" }).setToken(token);
-async function clientReadyHandler(client) {
+export async function clientReadyHandler(client) {
   console.log(`Hi ${client.user.username}! You're logged in and ready`);
 
   try {
@@ -20,5 +22,3 @@ async function clientReadyHandler(client) {
     console.log("Error", err);
   }
 }
-
-module.exports = { clientReadyHandler };

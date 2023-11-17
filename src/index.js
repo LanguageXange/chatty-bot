@@ -1,23 +1,14 @@
-const { Client, Events, GatewayIntentBits, Collection } = require("discord.js");
-const { clientReadyHandler } = require("./events/clientReady.js");
-const { interactionHandler } = require("./events/interaction.js");
-const { token } = require("./config.js");
-// https://discord.js.org/docs/packages/discord.js/14.14.1/BaseClient:Class
-// Client extends BaseClient which extends EventEmitter
-// Bits are like permission flags
-// Intents are named groups of pre-defined WebSocket events
+import { Client, Events, GatewayIntentBits, Collection } from "discord.js";
+import { clientReadyHandler } from "./events/clientReady.js";
+import { interactionHandler } from "./events/interaction.js";
+import setting from "./config.js";
 
-const pingCommand = require("./commands/ping");
-const jokeCommand = require("./commands/getjoke.js");
-const activityCommand = require("./commands/getActivity.js");
-const songCommand = require("./commands/getSong.js");
+import pingCommand from "./commands/ping.js";
+import jokeCommand from "./commands/getjoke.js";
+import activityCommand from "./commands/getActivity.js";
+import songCommand from "./commands/getSong.js";
 const client = new Client({
-  intents: [
-    GatewayIntentBits.Guilds,
-    // GatewayIntentBits.GuildMessages,
-    // GatewayIntentBits.MessageContent,
-    // GatewayIntentBits.GuildMembers,
-  ],
+  intents: [GatewayIntentBits.Guilds],
 });
 
 client.commands = new Collection();
@@ -29,4 +20,4 @@ client.commands.set(songCommand.data.name, songCommand);
 client.once(Events.ClientReady, clientReadyHandler); // only be triggered once
 client.on(Events.InteractionCreate, interactionHandler);
 
-client.login(token);
+client.login(setting.token);

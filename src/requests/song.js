@@ -1,10 +1,10 @@
-const axios = require("axios");
+import axios from "axios";
 const URL = "https://genius-song-lyrics1.p.rapidapi.com/chart/songs/";
 const API_HOST = "genius-song-lyrics1.p.rapidapi.com";
-const { rapidApiKey } = require("../config");
+import setting from "../config.js";
 
 // Quota Limit 100 / month
-async function fetchSongs(time = "all_time", genre = "all") {
+export async function fetchSongs(time = "all_time", genre = "all") {
   const options = {
     method: "GET",
     url: URL,
@@ -15,7 +15,7 @@ async function fetchSongs(time = "all_time", genre = "all") {
       per_page: 10, // number of results return per request
     },
     headers: {
-      "X-RapidAPI-Key": rapidApiKey,
+      "X-RapidAPI-Key": setting.rapidApiKey,
       "X-RapidAPI-Host": API_HOST,
     },
   };
@@ -45,8 +45,6 @@ async function fetchSongs(time = "all_time", genre = "all") {
     console.error(error);
   }
 }
-
-module.exports = { fetchSongs };
 
 // data returned
 // {
