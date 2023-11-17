@@ -2,7 +2,7 @@ const { REST, Routes } = require("discord.js");
 const { token, clientId, guildId } = require("../config.js");
 const rest = new REST().setToken(token);
 async function clientReadyHandler(client) {
-  console.log(`Hi ${client.user.username}! You're logged in and ready`);
+  console.log(`Logged in as ${client.user.username}`);
 
   try {
     const data = await rest.put(
@@ -13,7 +13,7 @@ async function clientReadyHandler(client) {
         }),
       }
     );
-    console.log(`Loading ${data.length} commands`);
+    console.log(`Loaded ${data.length} commands`);
   } catch (err) {
     console.log("Error", err);
   }
