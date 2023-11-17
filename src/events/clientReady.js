@@ -1,12 +1,10 @@
 import { REST, Routes } from "discord.js";
-// https://discordjs.guide/creating-your-bot/command-deployment.html#guild-commands
 
 import setting from "../config.js";
-
 const { token, clientId, guildId } = setting;
-const rest = new REST({ version: "10" }).setToken(token);
+const rest = new REST().setToken(token);
 export async function clientReadyHandler(client) {
-  console.log(`Hi ${client.user.username}! You're logged in and ready`);
+  console.log(`Logged in as ${client.user.username}`);
 
   try {
     const data = await rest.put(
@@ -17,7 +15,7 @@ export async function clientReadyHandler(client) {
         }),
       }
     );
-    console.log(`Loading ${data.length} commands`);
+    console.log(`Loaded ${data.length} commands`);
   } catch (err) {
     console.log("Error", err);
   }

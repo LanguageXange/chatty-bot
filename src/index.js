@@ -2,7 +2,6 @@ import { Client, Events, GatewayIntentBits, Collection } from "discord.js";
 import { clientReadyHandler } from "./events/clientReady.js";
 import { interactionHandler } from "./events/interaction.js";
 import setting from "./config.js";
-
 import pingCommand from "./commands/ping.js";
 import jokeCommand from "./commands/getjoke.js";
 import activityCommand from "./commands/getActivity.js";
