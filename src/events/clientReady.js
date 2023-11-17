@@ -1,8 +1,6 @@
 const { REST, Routes } = require("discord.js");
-// https://discordjs.guide/creating-your-bot/command-deployment.html#guild-commands
-
 const { token, clientId, guildId } = require("../config.js");
-const rest = new REST({ version: "10" }).setToken(token);
+const rest = new REST().setToken(token);
 async function clientReadyHandler(client) {
   console.log(`Hi ${client.user.username}! You're logged in and ready`);
 

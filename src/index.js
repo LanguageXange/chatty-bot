@@ -2,22 +2,13 @@ const { Client, Events, GatewayIntentBits, Collection } = require("discord.js");
 const { clientReadyHandler } = require("./events/clientReady.js");
 const { interactionHandler } = require("./events/interaction.js");
 const { token } = require("./config.js");
-// https://discord.js.org/docs/packages/discord.js/14.14.1/BaseClient:Class
-// Client extends BaseClient which extends EventEmitter
-// Bits are like permission flags
-// Intents are named groups of pre-defined WebSocket events
 
 const pingCommand = require("./commands/ping");
 const jokeCommand = require("./commands/getjoke.js");
 const activityCommand = require("./commands/getActivity.js");
 const songCommand = require("./commands/getSong.js");
 const client = new Client({
-  intents: [
-    GatewayIntentBits.Guilds,
-    // GatewayIntentBits.GuildMessages,
-    // GatewayIntentBits.MessageContent,
-    // GatewayIntentBits.GuildMembers,
-  ],
+  intents: [GatewayIntentBits.Guilds],
 });
 
 client.commands = new Collection();
